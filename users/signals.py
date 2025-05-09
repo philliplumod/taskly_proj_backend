@@ -11,11 +11,6 @@ This function listens to the `post_save` signal of the `User` model. When a new
 user is created (`created` is True), it automatically creates a corresponding
 `Profile` instance linked to the user.
 
-Args:
-    sender (Model): The model class that sent the signal (in this case, `User`).
-    instance (User): The instance of the `User` model that was saved.
-    created (bool): A boolean indicating whether a new record was created.
-    **kwargs: Additional keyword arguments passed by the signal.
 """
 
 @receiver(post_save, sender=User)
