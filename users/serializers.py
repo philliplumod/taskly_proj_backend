@@ -6,10 +6,7 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
 
-    url = serializers.HyperlinkedIdentityField(
-        view_name='users-detail',
-        lookup_field='user_id'
-    )
+    url = serializers.HyperlinkedIdentityField()
 
     def create(self, validated_data):
         password = validated_data.pop('password')
